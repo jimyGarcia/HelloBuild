@@ -5,17 +5,18 @@ import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import RegisterPage from '../pages/RegisterPage';
-import RepositoriesPage from '../pages/RepositoriesPage'
+import RepositoriesPage from '../pages/RepositoriesPage';
 import PrivateRoute from './PrivateRoutes';
+import PublicRoute from './PublicRoutes';
 
 export const AppRouter = () => {
     return (
         <Router>
             <Layout>
                 <Switch>
-                    <Route exact path='/' component={HomePage} />
-                    <Route exact path='/login' component={LoginPage} />
-                    <Route exact path='/register' component={RegisterPage} />
+                    <PublicRoute exact path='/' component={HomePage} />
+                    <PublicRoute exact path='/login' component={LoginPage} />
+                    <PublicRoute exact path='/register' component={RegisterPage} />
                     <PrivateRoute exact path='/account' component={AccountPage} />
                     <PrivateRoute exact path='/repositories' component={RepositoriesPage} />
 
@@ -27,3 +28,5 @@ export const AppRouter = () => {
         </Router>
     )
 };
+
+export default AppRouter;

@@ -1,9 +1,15 @@
-import { AppRouter } from "./routers/AppRouter";
+import AuthProvider from "../src/Auth/AuthProvider";
+import AppRouter from "../src/routers/AppRouter";
 
 const App = () => {
-  return (
-      <AppRouter />
-  );
+    return (
+      <div>
+        <AuthProvider>
+          <AppRouter />
+        </AuthProvider>
+
+      </div>
+    );
 }
 
 export default App;
