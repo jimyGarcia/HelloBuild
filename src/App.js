@@ -1,13 +1,18 @@
 import AuthProvider from "../src/Auth/AuthProvider";
 import AppRouter from "../src/routers/AppRouter";
+import {BrowserRouter as Router} from 'react-router-dom';
+import Layout from "./components/Layouts/Layouts";
 
 const App = () => {
     return (
       <div>
-        <AuthProvider>
-          <AppRouter />
-        </AuthProvider>
-
+        <Router>
+          <AuthProvider>
+          <Layout>
+              <AppRouter />
+          </Layout>  
+          </AuthProvider>
+        </Router>
       </div>
     );
 }
