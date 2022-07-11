@@ -1,10 +1,11 @@
 import { Redirect, Route } from "react-router-dom";
 import useAuth from "../Auth/UseAuth";
+import routes from "../Helpers/Routes";
 
 const PublicRoute = (props) => {
-    const { user } = useAuth();
+    const { isLogged } = useAuth();
 
-    if(user) return <Redirect to='/repositories' />
+    if(isLogged()) return <Redirect to={routes.RepositoriesPage}/>
 
     return (
         <Route {...props}/>
