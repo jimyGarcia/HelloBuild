@@ -2,13 +2,14 @@ import { useLocation } from "react-router-dom";
 import useAuth from "../Auth/UseAuth";
 import { layout } from '../components/Layouts/layoutTemplate';
 import {FilePersonFill } from "react-bootstrap-icons";
+import routes from "../Helpers/Routes";
 
 const userCredentials = {};
 
 const LoginPage = () => {
     
     const { login } = useAuth(); 
-   
+
     return (
         <div className={layout.mainClass}>
             <div className={layout.mainRow}>
@@ -26,11 +27,11 @@ const LoginPage = () => {
                                     <br/>
                                 </div>
                                 <div className="form">                                    
-                                    <label className="mb-2" for="uname"><b>Username</b></label>
+                                    <label className="mb-2" htmlFor="uname"><b>Username</b></label>
                                     <br/>                                                                        
                                     <input className="mb-2 rounded ps-2" type="text" placeholder="Enter Username" name="uname" required/>
                                     <br/>
-                                    <label className="mb-2" for="psw"><b>Password</b></label>
+                                    <label className="mb-2" htmlFor="psw"><b>Password</b></label>
                                     <br/>
                                     <input className="mb-2 rounded ps-2" type="password" placeholder="Enter Password" name="psw" required/>
                                     <br/>
@@ -38,6 +39,7 @@ const LoginPage = () => {
                                         className={layout.cardContentButton}
                                         onClick={() =>login(userCredentials)}>Login 
                                     </button>
+                                    <p className={layout.cardContentPT}>Don't have an account? <a href={routes.RegisterPage}>Sign up!</a></p>
                                 </div>
                             </form>                            
                         </div>

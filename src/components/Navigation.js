@@ -5,24 +5,33 @@ import routes from '../Helpers/Routes';
 
 const Navigation = () => {
 
-    const {logout} = useAuth();
+    const {logout, isLogged} = useAuth();
+
+    const isLoggedIn = isLogged();
 
     return (
-        <Navbar collapseOnSelect expand='lg' variant='dark' bg='dark'>
+        <Navbar collapseOnSelect expand='lg'>
             <Navbar.Brand>
-                poner imagen
+                <a href={routes.HomePage}><img className="avatar" src="img/hellobuild-logo.png" alt="Avatar" /></a>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
             <Navbar.Collapse id='responsive-navbar-nav'>
                 <Nav className='me-auto'>
-                    <Nav.Link as={NavLink} to={routes.HomePage}>Home</Nav.Link>
-                    <Nav.Link as={NavLink} to={routes.RepositoriesPage}>Repositories</Nav.Link>
+                    {isLoggedIn && 
+                        <>
+                            <Nav.Link as={NavLink} to={routes.AccountPage}>Account</Nav.Link>
+                            <Nav.Link as={NavLink} to={routes.RepositoriesPage}>Repositories</Nav.Link>
+                        </>
+                    }
                 </Nav>
                 <Nav>
-                    <Nav.Link as={NavLink} to={routes.LoginPage}>Login</Nav.Link>
-                    <Nav.Link as={NavLink} to={routes.RegisterPage}>Register</Nav.Link>
-                    <Nav.Link as={NavLink} to={routes.AccountPage}>Account</Nav.Link>
-                    <Nav.Link to={routes.AccountPage} onClick={logout}>Logout</Nav.Link>
+                    {!isLoggedIn && 
+                        <>
+                            <Nav.Link as={NavLink} to={routes.LoginPage}>Login</Nav.Link>
+                            <Nav.Link as={NavLink} to={routes.RegisterPage}>Sign Up</Nav.Link>
+                        </>
+                    }
+                    {isLoggedIn && <Nav.Link to={routes.AccountPage} onClick={logout}>Logout</Nav.Link>}
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar.navbar-expand-lg {
+  background-color: #172c45 !important;
+  padding: 5px 30px;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.avatar {
+  max-height: 40px;
+}
+
+.card-body-main {
+  border: 1px solid #172c45 !important;
+  border-radius: 10px !important;
+}
+
+.no-border {
+  border: unset !important;
+}

@@ -43,24 +43,24 @@ const RepositoriesPage = () => {
         showToast();
     }
     return (      
-        <div class={layout.mainClass}>
+        <div className={layout.mainClass}>
             <div id="snackbar">{'The repository '+toastMsg.name+toastMsg.complement}</div>
-            <div class={layout.mainRow}>
-                <div class={layout.mainCol}>
-                    <div class={layout.cardTitleMain}>
-                        <div class={layout.cardTitleBody}>
-                            <h4 class={layout.cardTitleText}> <Github color="#172c45" size="30" /> My Repositories </h4>
+            <div className={layout.mainRow}>
+                <div className={layout.mainCol}>
+                    <div className={layout.cardTitleMain}>
+                        <div className={layout.cardTitleBody}>
+                            <h4 className={layout.cardTitleText}> <Github color="#172c45" size="30" /> My Repositories </h4>
                         </div>
                     </div>
-                    <div class={layout.cardContentMain}>
-                        <div class={layout.cardContentBody}>
+                    <div className={layout.cardContentMain}>
+                        <div className={layout.cardContentBody}>
                                 <div className="mb-4">
-                                    <img className="logo-rep" src="img/github.png" alt="Avatar" alt="avatar"/>
+                                    <img className="logo-rep" src="img/github.png" alt="Avatar"/>
                                     <br/> 
                                 </div>                         
                                 <a 
                                     href="#" 
-                                    class={layout.cardContentButton}
+                                    className={layout.cardContentButton}
                                     onClick={()=> {
                                         setContent(false);
                                         setTimeout(
@@ -77,12 +77,12 @@ const RepositoriesPage = () => {
                                     { !content ?  
                                         <label className="p-1 label-repo" >Repositories have not been loaded. </label> :  
                                         repos.map( (repo, index) =>
-                                            <div key={index} class={layout.cardContentInter}>                          
+                                            <div key={index} className={layout.cardContentInter}>                          
                                                 <h5>{Object(repo)['name']}</h5>
                                                 <h5>{Object(repo)['description']}</h5>
                                                 <h5>{Object(repo)['language']}</h5>                                            
                                                 <a 
-                                                    class={layout.cardContentButtonFav}
+                                                    className={layout.cardContentButtonFav}
                                                     onClick={()=> {
                                                         favoriteHandler(index);
                                                         console.log('Handler index: ', index)
