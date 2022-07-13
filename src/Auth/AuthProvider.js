@@ -6,6 +6,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const history = useHistory();
   const [user, setUser] = useState(null);
+  const [code, setCode] = useState(null);
 
   const login = (userCredentials, fromLocation) => {
     setUser(userCredentials);
@@ -13,12 +14,18 @@ const AuthProvider = ({ children }) => {
       history.push(fromLocation);
     }
   };
-  const logout = () => setUser(null);
+
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("currentUser");
+  };
 
   const isLogged = () => user;
 
   const contextValue = {
     user,
+    code,
+    setCode,
     isLogged,
     login,
     logout,

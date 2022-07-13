@@ -45,6 +45,7 @@ const LoginPage = () => {
         if (userOfList.password === user.password) {
           validated = true;
           login({ userName: user.user });
+          localStorage.setItem("currentUser", user.user);
           history.push(routes.AccountPage);
         }
       }

@@ -33,3 +33,11 @@ code {
 .no-border {
   border: unset !important;
 }
+
+.logo-rep {
+  height: 50px;
+}
+
+body iframe {
+ display: none !important;
+}

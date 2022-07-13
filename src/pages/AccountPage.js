@@ -14,7 +14,6 @@ const AccountPage = () => {
                 <div className={layout.cardTitleMain}>
                   <div className={layout.cardTitleBody}>
                     <h4 className={layout.cardTitleText}>
-                      {" "}
                       <PersonFill color="#172c45" size="30" /> My Profile{" "}
                     </h4>
                   </div>
