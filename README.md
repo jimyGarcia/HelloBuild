@@ -16,7 +16,15 @@ REACT_APP_OAUTH_SERVER_URL="https://api.github.com"
 REACT_APP_SCOPE="repo, user"
 ```
 
-## Available Scripts
+## Installing the package
+
+In the project directory, you can run:
+
+### `npm install`
+
+to install al dependencies.
+
+## Run app and enjoy
 
 In the project directory, you can run:
 
