@@ -34,7 +34,7 @@ const HomePage = () => {
                                             </p>
                                             THANKS FOR ALL. 
                                         </div>
-                                        <a href={routes.LoginPage} className={layout.cardContentButton}> START NOW</a>
+                                        <a href={routes.RegisterPage} className={layout.cardContentButton}> START NOW</a>
                                     </div>
                                 </div>
                             </div>
